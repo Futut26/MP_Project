@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .bg-primary {
+        @apply bg-[#014069]
+    }
+
+    .bg-secondary {
+        @apply bg-[#4DBAFF]
+    }
+
+    .text-primary {
+        @apply text-[#014069]
+    }
+
+    .text-secondary {
+        @apply text-[#4DBAFF]
+    }
+}
