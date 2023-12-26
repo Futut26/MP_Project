@@ -21,31 +21,31 @@ export default function detail({ auth, title,id }) {
             {/* image */}
             <div className="flex flex-col w-full gap-5">
                 <div className="w-full flex justify-between flex-row gap-3 pt-5">
-                    <div className=" w-full ">
+                    <div className=" w-[50%] ">
                         <img
-                            className="rounded-md w-full"
+                            className="rounded-md w-full h-full"
                             src="/assets/img/properti/stellar_properti.png"
                             alt=""
                         />
                     </div>
-                    <div className="w-full columns-2 space-y-5 pb-10">
+                    <div className="w-[50%] grid grid-cols-2 gap-4 pb-10 h-full">
                         <img
-                            className="rounded-md object-contain w-[16rem]"
+                            className="rounded-md object-contain w-full"
                             src="/assets/img/properti/stellar_properti.png"
                             alt=""
                         />{" "}
                         <img
-                            className="rounded-md object-contain w-[16rem]"
+                            className="rounded-md object-contain w-full"
                             src="/assets/img/properti/stellar_properti.png"
                             alt=""
                         />{" "}
                         <img
-                            className="rounded-md object-contain w-[16rem]"
+                            className="rounded-md object-contain w-full"
                             src="/assets/img/properti/stellar_properti.png"
                             alt=""
                         />{" "}
                         <img
-                            className="rounded-md object-contain w-[16rem]"
+                            className="rounded-md object-contain w-full"
                             src="/assets/img/properti/stellar_properti.png"
                             alt=""
                         />
