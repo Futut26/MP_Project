@@ -6,7 +6,8 @@ export default function DetailFormulirPemesanan({ auth, title }) {
         <UserLayout auth={auth} title={title}>
             <div className="w-full py-10 space-y-5">
                 <div className="flex flex-col text-primary text-xl font-semibold gap-2">
-                    Pemesanan Property {"->"} Formulir Pemesanan
+                    Pemesanan Properti {'->'} Formulir Pemesanan {'->'} Upload Dokumen
+                    Persyaratan {'->'} Rincian Pemesanan
                     <p className=" font-light text-sm border-b-4 border-primary"></p>
                 </div>
                 <div className="border rounded-md p-3 w-full gap-2 flex flex-col bg-white">
@@ -22,20 +23,11 @@ export default function DetailFormulirPemesanan({ auth, title }) {
                         </p>
                         <div className="text-blue-600 flex flex-row gap-2 items-center">
                             Pilih Unit:{" "}
-                            <select name="" id="" className="">
-                                <option value="1">A1</option>
-                                <option value="2">A2</option>
-                                <option value="3">A3</option>
-                                <option value="4">A4</option>
-                            </select>
+                            <span className="border px-3 py-2">A1</span>
                         </div>
                         <div className="text-blue-600 flex flex-row gap-2 items-center">
                             Pilih Pengajuan Pembiayaan:{" "}
-                            <select name="" id="" className="">
-                                <option value="1">KPR</option>
-                                <option value="2">Case Bertahap</option>
-                                <option value="3">Case Keras</option>
-                            </select>
+                            <span className="border px-3 py-2">Case Keras</span>
                         </div>
                     </div>
                     <p className=" text-primary font-semibold">
@@ -125,41 +117,41 @@ export default function DetailFormulirPemesanan({ auth, title }) {
                                 <tr>
                                     <td>1</td>
                                     <td>KTP</td>
-                                    <td>
-                                        <label className="btn btn-secondary font-extrabold text-white">
-                                            Choose File png/jpg/pdf
-                                            <input type="file" hidden />
-                                        </label>
-                                    </td>
+                                    <td>Menunggu Verfikasi</td>
                                 </tr>
                                 <tr>
                                     <td>2</td>
                                     <td>NPWP</td>
-                                    <td>
-                                        <label className="btn btn-secondary font-extrabold text-white">
-                                            Choose File png/jpg/pdf
-                                            <input type="file" hidden />
-                                        </label>
-                                    </td>
+                                    <td>Menunggu Verfikasi</td>
                                 </tr>
                                 <tr>
                                     <td>3</td>
                                     <td>Kartu Keluarga</td>
-                                    <td>
-                                        <label className="btn btn-secondary font-extrabold text-white">
-                                            Choose File png/jpg/pdf
-                                            <input type="file" hidden />
-                                        </label>
-                                    </td>
+                                    <td>Menunggu Verfikasi</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-                    <div className="w-full flex justify-end gap-5">
-                        {/* button Batal dan lanjut pemesana */}
-                        <button className="btn btn-secondary ">Batal</button>
-                        <button className="btn btn-primary">
-                            Lanjut Pemesanan
+                </div>
+                <div className="border rounded-md p-3 w-full gap-2 flex flex-col bg-white">
+                    <p className=" text-primary font-semibold">
+                        {" "}
+                        Biaya Booking: Rp. 2.000.000,00
+                    </p>
+                    <div className="flex flex-row items-center">
+                        {/* icons info */}
+                        <i className="fas fa-info-circle text-blue-400 px-4"></i>
+                        <p className="text-blue-500">
+                            Booking fee merupakan uang pemesanan unit yang
+                            berfungsi sebagai tanda jadi untuk melakukan
+                            pembelian unit properti, booking juga berfungsi
+                            untuk mengkunci unit yang telah dipesan.
+                        </p>
+                    </div>
+                    {/* buttob Booking bg-primary */}
+                    <div className="flex justify-start">
+                        <button className="btn btn-primary font-extrabold text-white">
+                            Booking
                         </button>
                     </div>
                 </div>

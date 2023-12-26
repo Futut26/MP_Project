@@ -15,6 +15,13 @@ class OrderController extends Controller
     {
         return Inertia::render('User/Pemesanan/FormulirPemesanan', [
             'title' => 'Pesan Rumah Baru',
+            'id' => $id,
+        ]);
+    }
+    public function detail($id)
+    {
+        return Inertia::render('User/Pemesanan/DetailFormulirPemesanan', [
+            'title' => 'Pesan Rumah Baru',
         ]);
     }
 

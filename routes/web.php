@@ -37,7 +37,7 @@ Route::prefix('rumah-baru')->group(function () {
 
 Route::prefix('order')->group(function () {
     Route::get('/{id}', [OrderController::class, 'index'])->name('pesan-order');
-    // Route::get('/detail/{id}/pesan/', [HomeController::class, 'PesanOrder'])->name('pesan-order');
+    Route::get('/{id}/detail/', [OrderController::class, 'detail'])->name('detail-pesan-order');
 });
 
 // Route::prefix('rumah-sewa')->group(function () {

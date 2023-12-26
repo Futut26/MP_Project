@@ -1,7 +1,8 @@
 import UserLayout from "@/Layouts/UserLayout";
+import { Link } from "@inertiajs/react";
 import React from "react";
 
-export default function FormulirPemesanan({ auth, title }) {
+export default function FormulirPemesanan({ auth, title, id }) {
     return (
         <UserLayout auth={auth} title={title}>
             <div className="w-full py-10 space-y-5">
@@ -158,9 +159,12 @@ export default function FormulirPemesanan({ auth, title }) {
                     <div className="w-full flex justify-end gap-5">
                         {/* button Batal dan lanjut pemesana */}
                         <button className="btn btn-secondary ">Batal</button>
-                        <button className="btn btn-primary">
+                        <Link
+                            href={`/order/${id}/detail`}
+                            className="btn btn-primary"
+                        >
                             Lanjut Pemesanan
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </div>
