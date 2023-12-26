@@ -35,7 +35,7 @@ const MenuDashboard = [
         menu: [
             {
                 name: "Sales Report",
-                url: "/admin/article",
+                url: "/admin",
                 icon: "fas fa-chart-line",
             },
             {

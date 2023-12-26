@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -28,6 +29,22 @@ use Inertia\Inertia;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
+
+Route::prefix('rumah-baru')->group(function () {
+    Route::get('/', [HomeController::class, 'RumahBaru'])->name('rumah-baru');
+    Route::get('/detail/{id}', [HomeController::class, 'DetailRumahBaru'])->name('detail-rumah-baru');
+});
+
+Route::prefix('order')->group(function () {
+    Route::get('/{id}', [OrderController::class, 'index'])->name('pesan-order');
+    // Route::get('/detail/{id}/pesan/', [HomeController::class, 'PesanOrder'])->name('pesan-order');
+});
+
+// Route::prefix('rumah-sewa')->group(function () {
+//     Route::get('/', [HomeController::class, 'RumahSewa'])->name('rumah-sewa');
+//     Route::get('/detail/{id}', [HomeController::class, 'DetailRumahSewa'])->name('detail-rumah-sewa');
+// });
+
 Route::get('/admin', function () {
     return Inertia::render('Admin/Dashboard');
 })->middleware('admin')->name('dashboard');
@@ -38,4 +55,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

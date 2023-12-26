@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id('kd_properti');
             $table->foreignId('id_kategori_properti')->constrained('kategori_properti');
             $table->string('nama_properti');
-            $table->string('slug')->unique();
             $table->string('logo');
             $table->string('thumbnail');
             $table->string('lokasi');
@@ -32,7 +31,6 @@ return new class extends Migration
             [
                 'id_kategori_properti' => 1,
                 'nama_properti' => 'Stellar Jardin Residence',
-                'slug' => 'stellar-jardin-residence',
                 'logo' => 'stellar_logo.png', 
                 'thumbnail' => 'stellar_properti.png',
                 'Lokasi' => 'Cikunir, Bekasi Selatan, Bekasi',

@@ -6,7 +6,7 @@ import SectionNewProperty from "@/Components/UserComponents/Home/SectionNewPrope
 
 export default function index({ auth, title }) {
     return (
-        <UserLayout auth={auth} title={title} >
+        <UserLayout auth={auth} title={title}>
             <div className="flex gap-10 flex-col w-full py-10">
                 <SectionHero />
                 <SectionNewProperty />
@@ -105,7 +105,7 @@ export default function index({ auth, title }) {
                             <div className="py-2 h-[50%] flex flex-col px-4 text-primary gap-2">
                                 <div>
                                     <h1 className="text-xl font-extrabold ">
-                                    Puri Angsana Loka Sawangan
+                                        Puri Angsana Loka Sawangan
                                     </h1>
                                     <p>Pancoran, Jakarta Selatan</p>
                                     <p>Luas Bangunan : 90 m2</p>

@@ -5,34 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
-class HomeController extends Controller
+class OrderController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+
+    public function index($id)
     {
-        return Inertia::render('User/index', [
-            'title' => 'Home',
+        return Inertia::render('User/Pemesanan/FormulirPemesanan', [
+            'title' => 'Pesan Rumah Baru',
         ]);
     }
-
-    public function RumahBaru()
-    {
-        return Inertia::render('User/rumah/RumahBaru', [
-            'title' => 'Rumah Baru',
-        ]);
-    }
-    public function DetailRumahBaru($id)
-    {
-        return Inertia::render('User/rumah/detail/Detail', [
-            'title' => 'Detail Rumah Baru',
-            'id' => $id,
-        ]);
-    }
-
-    
-
 
     /**
      * Show the form for creating a new resource.

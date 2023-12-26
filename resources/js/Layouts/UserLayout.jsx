@@ -6,14 +6,14 @@ import { Head, usePage } from "@inertiajs/react";
 
 export default function UserLayout({ children, auth, title }) {
     const { jenis_properti } = usePage().props;
-    console.log(title);
+    const pathname = window.location.pathname;
     return (
         <>
             {title && <Head title={title} />}
             <div>
                 <Navbar auth={auth} />
-                <Hero />
-                <div className="lg:px-32 md:px-10 px-5  md:pt-10">
+                {pathname === "/" && <Hero />}
+                <div className="lg:px-32 md:px-10 px-5  md:pt-10 mt-10">
                     {children}
                 </div>
                 <Footer />

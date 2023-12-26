@@ -32,19 +32,24 @@ export default function Navbar({ auth }) {
                                 className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-80 h-auto"
                             >
                                 <div className="flex gap-5 flex-col ">
-                                    <div className="w-full"><h1>hhh</h1></div>
                                     <div className="w-full">
                                         <label className="text-base font-bold">
                                             Residensial
                                         </label>
                                         <li>
-                                            <Link href="#">Rumah Baru</Link>
+                                            <Link href="/rumah-baru">
+                                                Rumah Baru
+                                            </Link>
                                         </li>
                                         <li>
-                                            <Link href="#">Rumah Seken</Link>
+                                            <Link href="/rumah-seken">
+                                                Rumah Seken
+                                            </Link>
                                         </li>
                                         <li>
-                                            <Link href="#">Rumah Lelang</Link>
+                                            <Link href="/rumah-lelang">
+                                                Rumah Lelang
+                                            </Link>
                                         </li>
                                     </div>
 
@@ -53,10 +58,14 @@ export default function Navbar({ auth }) {
                                             Komersial
                                         </label>
                                         <li>
-                                            <Link href="#">Ruko Baru</Link>
+                                            <Link href="/ruko-baru">
+                                                Ruko Baru
+                                            </Link>
                                         </li>
                                         <li>
-                                            <Link href="#">Ruko Second</Link>
+                                            <Link href="/ruko-second">
+                                                Ruko Second
+                                            </Link>
                                         </li>
                                     </div>
                                 </div>

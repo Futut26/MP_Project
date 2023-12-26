@@ -1,20 +1,21 @@
 import TablePembiayaan from "@/Components/AdminComponents/ManageProperty/TablePembiayaan";
 import TablePropertyType from "@/Components/AdminComponents/ManageProperty/TablePropertyType";
+import { formatToRupiah, parseFromRupiah } from "@/Components/Fungsi";
 import InputError from "@/Components/InputError";
 import AdminLayout from "@/Layouts/AdminLayout";
 import { router, useForm } from "@inertiajs/react";
 import React, { useEffect, useState } from "react";
 import slugify from "slugify";
 
-function formatToRupiah(angka) {
-    if (!angka) return "";
-    return angka.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-}
+// function formatToRupiah(angka) {
+//     if (!angka) return "";
+//     return angka.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+// }
 
-function parseFromRupiah(rupiah) {
-    if (!rupiah) return 0;
-    return parseInt(rupiah.replace(/\./g, ""), 10);
-}
+// function parseFromRupiah(rupiah) {
+//     if (!rupiah) return 0;
+//     return parseInt(rupiah.replace(/\./g, ""), 10);
+// }
 
 const Show = ({ ...props }) => {
     console.log(props);
@@ -50,7 +51,7 @@ const Show = ({ ...props }) => {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-         if (name === "pinvalue_min") {
+        if (name === "pinvalue_min") {
             const numericPrice = parseFromRupiah(value);
             const formatted = formatToRupiah(numericPrice);
             const stringPrice = numericPrice.toString();
