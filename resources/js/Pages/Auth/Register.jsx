@@ -29,7 +29,9 @@ export default function Register() {
     return (
         <GuestLayout>
             <Head title="Register" />
-
+            <div
+            className='w-full flex justify-center items-center'
+            ><img className='w-[50%]' src="/assets/img/Logo.png" alt="" /></div>
             <form onSubmit={submit}>
                 <div>
                     <InputLabel htmlFor="name" value="Name" />

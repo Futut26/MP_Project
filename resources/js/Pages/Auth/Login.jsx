@@ -31,6 +31,9 @@ export default function Login({ status, canResetPassword }) {
             <Head title="Log in" />
 
             {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
+            <div
+            className='w-full flex justify-center items-center'
+            ><img className='w-[50%]' src="/assets/img/Logo.png" alt="" /></div>
 
             <form onSubmit={submit}>
                 <div>
@@ -79,12 +82,12 @@ export default function Login({ status, canResetPassword }) {
 
                 <div className="flex items-center justify-end mt-4">
                     {canResetPassword && (
-                        <Link
-                            href={route('password.request')}
+                        <h1
+
                             className="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                         >
-                            Forgot your password?
-                        </Link>
+                            Belum Punya Akun ? <Link href={route('register')}> Registrasi</Link>
+                        </h1>
                     )}
 
                     <PrimaryButton className="ml-4" disabled={processing}>
