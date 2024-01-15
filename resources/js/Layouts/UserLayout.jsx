@@ -13,7 +13,7 @@ export default function UserLayout({ children, auth, title }) {
             <div>
                 <Navbar auth={auth} />
                 {pathname === "/" && <Hero />}
-                <div className="lg:px-32 md:px-10 px-5  md:pt-10 mt-10">
+                <div className="lg:px-32 md:px-10 px-5 ">
                     {children}
                 </div>
                 <Footer />

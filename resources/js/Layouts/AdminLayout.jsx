@@ -12,10 +12,13 @@ const AdminLayout = ({ children, title, auth }) => {
         setSidebarOpen(!isSidebarOpen);
     };
 
+
+
     return (
         <>
             {title && <Head title={title} />}
             <div className="h-screen w-full overflow-hidden">
+                {/* jika user rolenya konsumen tampilkan component navab */}
                 <Header auth={auth} toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen}/>
                 <div className="w-full h-full flex">
                     <Sidebar isSidebarOpen={isSidebarOpen} auth={auth}/>

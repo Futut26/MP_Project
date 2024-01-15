@@ -16,7 +16,7 @@ use Inertia\Inertia;
 
 Route::middleware('guest')->group(function () {
     Route::get('register', [RegisteredUserController::class, 'create'])
-                ->name('register'); 
+                ->name('register');
 
     Route::post('register', [RegisteredUserController::class, 'store']);
 
@@ -36,6 +36,10 @@ Route::middleware('guest')->group(function () {
 
     Route::post('reset-password', [NewPasswordController::class, 'store'])
                 ->name('password.store');
+
+    // google login
+    Route::get('/auth/google', [AuthenticatedSessionController::class, 'redirectToGoogle'])->name('login.google');
+    
 });
 
 Route::middleware('auth')->group(function () {

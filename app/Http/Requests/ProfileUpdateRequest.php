@@ -17,7 +17,19 @@ class ProfileUpdateRequest extends FormRequest
     {
         return [
             'name' => ['string', 'max:255'],
-            'email' => ['email', 'max:255', Rule::unique(User::class)->ignore($this->user()->id)],
+            'email' => ['email', 'max:255', Rule::unique(User::class)->ignore($this->user()->id), 'regex:/^[a-zA-Z0-9_.+-]+@gmail\.com$/'],
         ];
     }
+
+    public function messages(){
+        return [
+            'name.string' => 'Nama harus berupa Karakter',
+            'name.max' => 'Nama maksimal 255 karakter',
+            'email.email' => 'Email harus berupa email',
+            'email.max' => 'Email maksimal 255 karakter',
+            'email.unique' => 'Email sudah terdaftar',
+            'email.regex' => 'Email harus menggunakan domain gmail.com',
+        ];
+    }
+
 }

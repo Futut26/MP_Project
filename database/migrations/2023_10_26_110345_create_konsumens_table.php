@@ -13,14 +13,14 @@ return new class extends Migration
     {
         Schema::create('konsumens', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
-            $table->string('nama_lengkap');
-            $table->string('jenis_kelamin');
-            $table->string('no_hp')->unique();
-            $table->string('pekerjaan');
-            $table->string('no_ktp')->unique();
-            $table->string('npwp')->unique();
-            $table->string('status_perkawinan');
+            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
+            $table->string('nama_lengkap')->nullable();
+            $table->string('pekerjaan')->nullable();
+            $table->string('no_hp')->unique()->nullable();
+            $table->string('jenis_kelamin')->nullable();
+            $table->string('no_ktp')->unique()->nullable();
+            $table->string('npwp')->unique()->nullable();
+            $table->string('status_perkawinan')->nullable();
             $table->timestamps();
         });
     }

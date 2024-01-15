@@ -21,6 +21,10 @@ class GaleriFactory extends Factory
             'nama_galeri' => $this->faker->sentence(mt_rand(3, 6)),
             'nama_file' => $this->faker->image('public/assets/img/properti', 640, 480, null, false),
             'jenis_file' => $this->faker->sentence(mt_rand(1, 1)),
+            // create faker video file
+
+
+
         ];
     }
 }

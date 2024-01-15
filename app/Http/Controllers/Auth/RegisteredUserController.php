@@ -37,7 +37,7 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
-        
+
 
         $user = User::create([
             'name' => $request->name,
@@ -47,11 +47,15 @@ class RegisteredUserController extends Controller
             // user->role->name = kosumen
             'role_id' => 1,
         ]);
+        // tambahkan user_id ke table konsumens
 
+        $user->konsumen()->create([
+            'user_id' => $user->id,
+        ]);
         event(new Registered($user));
 
         Auth::login($user);
-
-        return redirect(RouteServiceProvider::USER);
+        $user->sendEmailVerificationNotification();
+        return redirect(RouteServiceProvider::VerifyEmail);
     }
 }

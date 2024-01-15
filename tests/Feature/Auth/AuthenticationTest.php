@@ -18,7 +18,7 @@ class AuthenticationTest extends TestCase
         $response->assertStatus(200);
     }
 
-    public function test_pengguna_dapat_mengautentikasi_menggunakan_halaman_login(): void
+  public function test_pengguna_dapat_mengautentikasi_menggunakan_halaman_login(): void
     {
         $role = Role::factory()->create([
             'nama' => 'konsumen',
@@ -32,7 +32,11 @@ class AuthenticationTest extends TestCase
         ]);
 
         $this->assertAuthenticated();
-        $response->assertRedirect(RouteServiceProvider::USER);
+        if ($user->hasVerifiedEmail()) {
+            $response->assertRedirect(RouteServiceProvider::USER);
+        } else {
+            $response->assertRedirect(RouteServiceProvider::VerifyEmail);
+        }
     }
 
     public function test_pengguna_tidak_dapat_mengautentikasi_dengan_password_invalid(): void

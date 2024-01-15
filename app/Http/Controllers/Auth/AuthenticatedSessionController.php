@@ -5,12 +5,14 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Providers\RouteServiceProvider;
+
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Inertia\Response;
+use Laravel\Socialite\Facades\Socialite;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -38,7 +40,27 @@ class AuthenticatedSessionController extends Controller
         if (Auth::user()->role->nama == 'staff' || Auth::user()->role->nama == 'marketing' || Auth::user()->role->nama == 'pimpinan') {
             return redirect()->intended(RouteServiceProvider::ADMIN);
         } else {
+
             return redirect()->intended(RouteServiceProvider::USER);
+
+        }
+    }
+
+    // google login
+    public function redirectToGoogle()
+    {
+        return Socialite::driver('google')->redirect();
+
+    }
+
+    // google login callback
+    public function handleGoogleCallback()
+    {
+        try {
+            $user = Socialite::driver('google')->stateless()->user();
+            dd($user);
+        }catch (\Exception $e){
+            dd($e->getMessage());
         }
     }
 

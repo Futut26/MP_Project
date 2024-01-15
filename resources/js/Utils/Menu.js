@@ -44,6 +44,26 @@ const MenuDashboard = [
                 icon: "fas fa-pager",
             }
         ],
+    },
+    {
+        role: "konsumen",
+        menu: [
+            {
+                name: "Pengaturan Akun",
+                url: "/profile",
+                icon: "fas fa-chart-line",
+            },
+            {
+                name: "Infomasi Pribadi",
+                url: "/",
+                icon: "fas fa-pager",
+            },
+            {
+                name: "Back to Front Page",
+                url: "/",
+                icon: "fas fa-pager",
+            }
+        ],
     }
 ];
 

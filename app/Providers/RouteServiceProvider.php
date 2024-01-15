@@ -25,6 +25,8 @@ class RouteServiceProvider extends ServiceProvider
      public const USER = '/';
      public const GUEST = '/';
 
+     public const VerifyEmail = '/verify-email';
+
     /**
      * Define your route model bindings, pattern filters, and other route configuration.
      */

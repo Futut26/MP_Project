@@ -33,6 +33,9 @@ class RegistrationTest extends TestCase
         ]);
 
         $this->assertAuthenticated();
-        $response->assertRedirect(RouteServiceProvider::USER);
+        // verify email
+        $response->assertRedirect(RouteServiceProvider::VerifyEmail);
+
+        
     }
 }

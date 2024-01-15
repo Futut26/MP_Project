@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProfileController;
@@ -18,14 +19,19 @@ use Inertia\Inertia;
 |
 */
 
-// Route::get('/', function () {
-//     return Inertia::render('Welcome', [
-//         'canLogin' => Route::has('login'),
-//         'canRegister' => Route::has('register'),
-//         'laravelVersion' => Application::VERSION,
-//         'phpVersion' => PHP_VERSION,
-//     ]);
-// });
+Route::get('/', function () {
+    return Inertia::render('User/Index', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'loginGoogle' => Route::has('login.google'),
+    ]);
+});
+
+Route::get('/auth/google/callback', [AuthenticatedSessionController::class, 'handleGoogleCallback']);
+
+Route::get('/verify-email', function () {
+    return Inertia::render('Auth/VerifyEmail');
+})->middleware('auth')->name('verification.notice');
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
@@ -48,6 +54,10 @@ Route::prefix('order')->group(function () {
 Route::get('/admin', function () {
     return Inertia::render('Admin/Dashboard');
 })->middleware('admin')->name('dashboard');
+
+// middleware auth and verified email
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
